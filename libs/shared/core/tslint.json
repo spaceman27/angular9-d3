@@ -1,0 +1,17 @@
+{
+  "extends": "../../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "secureworksHomeassignment",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "secureworks-homeassignment",
+      "kebab-case"
+    ]
+  }
+}

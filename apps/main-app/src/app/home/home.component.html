@@ -1,0 +1,52 @@
+<div class="container">
+  <form [formGroup]="frm" novalidate (ngSubmit)="add()">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>PEOPLE INFORMATION</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Name" formControlName="name">
+              <mat-error *ngIf="frm.controls['name'].hasError('required')">
+                Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Age" maxlength="3"type="number" formControlName="age"></textarea>
+              <mat-error *ngIf="frm.controls['age'].hasError('required')">
+                Age is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="frm.controls['age'].hasError('required') &&  frm.controls.age.errors?.max">
+                Age should be minor than.
+              </mat-error>
+              <mat-error *ngIf="frm.controls['age'].hasError('required') &&  frm.controls.age.errors?.min">
+                Age should be greater than 0.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Weight" maxlength="5" type="number" formControlName="weight">
+              <mat-error *ngIf="frm.controls['weight'].hasError('required')">
+                Weight is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+
+<secureworks-homeassignment-data-visualization [lst]="lst"></secureworks-homeassignment-data-visualization>
