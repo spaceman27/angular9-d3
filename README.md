@@ -2,8 +2,9 @@
 
 What have in this project:
 - NX monorepo
+- Angular 9
 - Angular Elements Lib Ready
-- Angular material UI
+- Angular Material UI
 - Differential Loading
 - Enable Hot Reloading (HRM)
 - Startup service: init db data, and load server configuration
